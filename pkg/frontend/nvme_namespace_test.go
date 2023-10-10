@@ -129,8 +129,8 @@ func TestFrontEnd_CreateNvmeNamespace(t *testing.T) {
 					Eui64:         1967554867335598546,
 				},
 				Status: &pb.NvmeNamespaceStatus{
-					PciState:     2,
-					PciOperState: 1,
+					State:     pb.NvmeNamespaceStatus_STATE_ENABLED,
+					OperState: pb.NvmeNamespaceStatus_OPER_STATE_ONLINE,
 				},
 			},
 			spdk:    []string{`{"id":%d,"error":{"code":0,"message":""},"result":{"status": 0, "ns_instance_id": 17}}`, `{"id":%d,"error":{"code":0,"message":""},"result":{"status": 0}}`},
